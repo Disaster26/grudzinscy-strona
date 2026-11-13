@@ -44,7 +44,7 @@
   /* zgody cookies */
   var KL = 'gk-zgoda', ck = D.getElementById('ck');
   function zgoda() { try { return JSON.parse(localStorage.getItem(KL) || 'null'); } catch (e) { return null; } }
-  function zapisz(z) { z.t = Date.now(); try { localStorage.setItem(KL, JSON.stringify(z)); } catch (e) {} if (ck) ck.hidden = true; zastosuj(z); }
+  function zapisz(z) { z.t = Date.now(); try { localStorage.setItem(KL, JSON.stringify(z)); } catch (e) {} if (ck) ck.hidden = true; D.documentElement.classList.remove('ck-on'); zastosuj(z); }
   var mapy = D.querySelectorAll('[data-mapa]');
   function wstawMape(el) {
     if (el.querySelector('iframe') || !cfg.mapa) return;
